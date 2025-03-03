@@ -331,6 +331,7 @@ nav {
   .links a {
     padding: 0;
   }
+
   .links a:hover {
     padding: 0;
     background: transparent;
@@ -339,6 +340,7 @@ nav {
     display: flex;
     gap: 0.5rem;
   }
+  
   .social-icons a {
     color: var(--primary-500);
     transition: var(--transition);
