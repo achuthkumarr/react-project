@@ -46,7 +46,7 @@ html {
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
   /* rest of the vars */
-  --backgroundColor: var(--grey-50);
+  --backgroundColor: var(--grey-700);
   --textColor: var(--grey-900);
   --borderRadius: 0.25rem;
   --letterSpacing: 1px;
@@ -183,7 +183,7 @@ ul {
 .form {
   width: 90vw;
   max-width: var(--fixed-width);
-  background: var(--white);
+  background: var(--black);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;
@@ -255,7 +255,7 @@ ul {
 /* ============= PROJECT CSS =============== */
 
 nav {
-  background: var(--white);
+  background: var(--black);
   box-shadow: var(--shadow-1);
 }
 
@@ -348,4 +348,34 @@ nav {
   .social-icons a:hover {
     color: var(--primary-300);
   }
+}
+/* Home Page Styles */
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: var(--backgroundColor);
+  color: var(--textColor);
+}
+
+.home-content {
+  text-align: center;
+  background: var(--grey-800);
+  padding: 2rem;
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-3);
+  max-width: var(--fixed-width);
+}
+
+.home-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.home-text {
+  font-size: 1.2rem;
+  color: var(--grey-300);
 }
