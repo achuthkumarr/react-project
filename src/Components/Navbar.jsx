@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { links, social } from './data';
+import { links, social } from './Data';
 function Navbar() {
     const [showLinks, setShowLinks] = useState(false);
     const linksContainerRef = useRef(null);
