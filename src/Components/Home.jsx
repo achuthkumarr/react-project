@@ -1,4 +1,4 @@
-function Home() {
+function Site() {
   return (
       <div className="flex items-center justify-center h-screen bg-gray-800 text-gray-200">
           <div className="text-center bg-gray-900 p-8 rounded-lg shadow-lg max-w-md">
@@ -9,4 +9,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Site;
