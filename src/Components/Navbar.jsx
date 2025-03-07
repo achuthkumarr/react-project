@@ -34,7 +34,7 @@ function Navbar() {
               <li key={id}>
                 <Link
                   to={url}
-                  className="block px-4 py-2 text-black capitalize transition-colors hover:text-amber-300">
+                  className="block px-4 py-2 text-black capitalize font-bold transition-colors hover:text-amber-300">
                   {text}
                 </Link>
               </li>
