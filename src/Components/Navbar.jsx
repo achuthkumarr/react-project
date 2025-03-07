@@ -18,8 +18,7 @@ function Navbar() {
         <div className="flex items-center">
           <button
             className="text-primary-500 text-2xl transition-transform transform hover:rotate-90 hover:text-amber-200"
-            onClick={toggleLinks}
-          >
+            onClick={toggleLinks}>
             <FaBars />
           </button>
         </div>
@@ -29,15 +28,13 @@ function Navbar() {
           ref={linksContainerRef}
           className={`overflow-hidden transition-all duration-300 ${
             showLinks ? 'h-auto' : 'h-0'
-          } md:max-h-full md:flex`}
-        >
+          } md:max-h-full md:flex`}>
           <ul className="flex flex-col md:flex-row md:gap-6">
             {links.map(({ id, url, text }) => (
               <li key={id}>
                 <Link
                   to={url}
-                  className="block px-4 py-2 text-gray-300 capitalize transition-colors hover:text-amber-300"
-                >
+                  className="block px-4 py-2 text-gray-300 capitalize transition-colors hover:text-amber-300">
                   {text}
                 </Link>
               </li>
@@ -51,8 +48,7 @@ function Navbar() {
             <li key={id}>
               <a
                 href={url}
-                className="text-primary-500 transition-colors hover:text-primary-300"
-              >
+                className="text-primary-500 transition-colors hover:text-primary-300">
                 {icon}
               </a>
             </li>
