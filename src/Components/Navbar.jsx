@@ -12,12 +12,12 @@ function Navbar() {
     };
 
     return (
-        <nav className="bg-black shadow-md text-white">
+        <nav className=" shadow-md bg-auto  top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
         {/* Logo and Toggle Button */}
         <div className="flex items-center">
           <button
-            className="text-primary-500 text-2xl transition-transform transform hover:rotate-90 hover:text-amber-200"
+            className=" text-2xl transition-transform transform hover:rotate-90 hover:text-amber-200"
             onClick={toggleLinks}>
             <FaBars />
           </button>
@@ -34,7 +34,7 @@ function Navbar() {
               <li key={id}>
                 <Link
                   to={url}
-                  className="block px-4 py-2 text-gray-300 capitalize transition-colors hover:text-amber-300">
+                  className="block px-4 py-2 text-black capitalize transition-colors hover:text-amber-300">
                   {text}
                 </Link>
               </li>
