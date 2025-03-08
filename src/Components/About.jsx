@@ -26,7 +26,7 @@ const About = () => {
 
       {/* Text Content */}
       <div className="md:w-7/12 lg:w-7/12 text-center md:text-left">
-        <h2 className="text-5xl font-bold mt-10 md:text-6xl">
+        <h2 className="text-5xl font-bold mt-10 md:text-6xl text-blue-400">
           Welcome to Our Company
         </h2>
         <p className="mt-6 text-lg">

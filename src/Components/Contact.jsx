@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-const Content = () => {
-    return (
-        <div className="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
+function Contact() {
+  return (
+    <div className="relative flex items-top justify-center min-h-screen bg-gray-100 sm:items-center sm:pt-0">
         {/* Background Image */}
             <div className="absolute inset-0 w-full h-full">
                 <img className="w-full h-full object-cover object-center" 
@@ -25,7 +25,7 @@ const Content = () => {
                             <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                             <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
-                        <span className="ml-4 text-md font-semibold w-40">Bengaluru, India</span>
+                        <span className="ml-4 text-md font-semibold w-40">Bengaluru,India</span>
                     </div>
 
                     <div className="flex items-center mt-4 text-gray-600">
@@ -86,7 +86,7 @@ const Content = () => {
                 </div>
             </div>
         </div>
-    );
+  )
 }
 
-export default Content;
+export default Contact
