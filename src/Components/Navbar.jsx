@@ -17,7 +17,7 @@ function Navbar() {
         {/* Logo and Toggle Button */}
         <div className="flex items-center">
           <button
-            className=" text-2xl transition-transform transform hover:rotate-90 hover:text-amber-200"
+            className=" text-2xl transition-transform transform hover:rotate-90 hover:text-blue-200"
             onClick={toggleLinks}>
             <FaBars />
           </button>
@@ -34,7 +34,7 @@ function Navbar() {
               <li key={id}>
                 <Link
                   to={url}
-                  className="block px-4 py-2 text-black capitalize font-bold transition-colors hover:text-amber-300">
+                  className=" px-4 py-2 text-black capitalize font-bold transition-colors hover:text-blue-300">
                   {text}
                 </Link>
               </li>
@@ -48,7 +48,7 @@ function Navbar() {
             <li key={id}>
               <a
                 href={url}
-                className="text-primary-500 transition-colors hover:text-primary-300">
+                className="text-primary-500 transition-colors hover:text-blue-300">
                 {icon}
               </a>
             </li>

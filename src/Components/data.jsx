@@ -17,7 +17,6 @@ export const links = [
     text: 'contact',
   },
 ];
-
 export const social = [
   {
     id: 1,
