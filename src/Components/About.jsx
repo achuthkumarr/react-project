@@ -19,7 +19,7 @@ const About = () => {
   <div className="relative z-10 container mx-auto px-6 text-white md:px-12 xl:px-6">
     <div className="flex flex-col md:flex-row items-center gap-8">
       
-      {/* Image Placeholder (Optional) */}
+      {/* Image */}
       <div className="md:w-5/12 lg:w-5/12 rounded-2xl overflow-hidden">
         <img src="/image.png" alt="Our Team" className="w-full h-auto rounded-2xl shadow-lg"/>
       </div>
