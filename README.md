@@ -21,22 +21,24 @@ This project is set up with **Vite** and **React**, offering **fast Hot Module R
 ```sh
 git clone <your-repo-url>
 cd <your-project-folder>
-
+```
 # 2.Install Dependencies 
-
+```
 npm install
 # or
 yarn install
-
+```
 # 3. Start Development Server
-
+```
 npm run dev
 # or
 yarn dev
-
-	•	The project will start at http://localhost:5173/ (default Vite port).
+```
+The project will start at http://localhost:5173/ (default Vite port).
 
 # 4. Build for Production
+```
 npm run build
+```
 
 
