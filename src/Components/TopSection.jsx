@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const TopSection = () => {
   return (
     <div className="hidden md:block">
-      <div className="flex justify-between items-center p-2 md:p-2" style={{ backgroundColor: "#31186B" }}>
+      <div className="flex justify-between items-center p-2 md:p-2" style={{ backgroundColor: "#123456" }}>
         <Link to="tel:+919538056725">
           <div className="flex items-center gap-2">
             <FaPhoneAlt className="text-white text-lg" />
@@ -23,7 +23,7 @@ const TopSection = () => {
             </span>
           </div>
         </Link>
-        <div className="flex gap-4 p-2  before:m-0 rounded-tl-md rounded-bl-3xl" style={{ backgroundColor: "#8E2393" }}>
+        <div className="flex gap-4 p-2  before:m-0 rounded-tl-md rounded-bl-3xl" style={{ backgroundColor: "#654" }}>
         <Link
             to="https://in.linkedin.com/in/achuth-kumar-r-716992181"
             target="_blank"
