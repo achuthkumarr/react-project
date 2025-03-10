@@ -12,7 +12,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-transparent  shadow-md">
+    <nav className=" w-full z-50  bg-black shadow-md">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
         {/* Logo and Toggle Button */}
         <div className="flex items-center">

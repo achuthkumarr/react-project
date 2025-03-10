@@ -4,10 +4,12 @@ import About from "./Components/About";
 import Site from "./Components/Site";
 import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
+import TopSection from "./Components/TopSection";
 
 function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
+      <TopSection />
       <Navbar />
       <main className="flex-grow">
         <Outlet /> {/* This will render the current route component */}
