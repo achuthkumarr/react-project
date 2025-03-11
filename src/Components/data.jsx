@@ -1,4 +1,4 @@
-import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaYoutube,FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 export const links = [
   {
@@ -20,17 +20,23 @@ export const links = [
 export const social = [
   {
     id: 1,
-    url: 'https://www.facebook.com',
-    icon: <FaFacebook />,
+    url: 'https://in.linkedin.com/in/achuth-kumar-r-716992181',
+    icon: <FaLinkedin />,
   },
   {
     id: 2,
-    url: 'https://www.twitter.com',
-    icon: <FaTwitter />,
+    url: 'https://www.youtube.com/@achuthkumar9959',
+    icon: <FaYoutube />,
+    
   },
   {
     id: 3,
-    url: 'https://www.linkedin.com',
-    icon: <FaLinkedin />,
+    url: 'https://x.com/AchuthKumar11',
+    icon: <FaTwitter />,
+  },
+  {
+    id: 4,
+    url: 'https://www.instagram.com/achuthkr/',
+    icon: <FaInstagram />,
   },
 ];
