@@ -9,7 +9,7 @@ function Contact() {
                 src="/image.png" alt="Project Background" />
             </div>
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 relative">
-                <div className="relative mt-8 bg-white bg-opacity-90 shadow-md rounded-lg p-6">
+                <div className="relative mt-8 bg-gray-200 bg-opacity-90 shadow-md rounded-lg p-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Contact Info Section */}
                         <div className="p-6">
@@ -44,7 +44,7 @@ function Contact() {
                     </div>
 
                         {/* Contact Form */}
-                        <form className="p-6 bg-gray-50 shadow-md rounded-lg flex flex-col justify-center">
+                        <form className="p-6 bg-gray-700 shadow-md rounded-lg flex flex-col justify-center">
                             <div className="flex flex-col">
                             <label htmlFor="name" className="sr-only">Full Name</label>
                             <input

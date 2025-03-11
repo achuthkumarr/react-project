@@ -5,6 +5,8 @@ import Site from "./Components/Site";
 import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
 import TopSection from "./Components/TopSection";
+import Login from "./Components/Login";
+
 
 function Layout() {
   return (
@@ -27,6 +29,7 @@ const router = createBrowserRouter([
       { index: true, element: <Site /> },
       { path: "About", element: <About /> },
       { path: "Contact", element: <Contact /> },
+      { path: "Login", element: <Login /> },
     ],
   },
 ]);

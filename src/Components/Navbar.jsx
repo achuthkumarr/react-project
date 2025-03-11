@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { FaBars } from 'react-icons/fa';
-import { links, social } from './data';
+import { links } from './data';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
@@ -12,12 +12,12 @@ function Navbar() {
   };
 
   return (
-    <nav className=" w-full z-50  bg-black shadow-lg sticky top-0">
+    <nav className="w-full z-50 bg-orange-800 shadow-lg sticky top-0">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
         {/* Logo and Toggle Button */}
         <div className="flex items-center">
           <button
-            className="text-2xl text-white transition-transform transform hover:rotate-90 hover:text-blue-200"
+            className="text-2xl text-gray-800 transition-transform transform hover:rotate-90 hover:text-gray-600"
             onClick={toggleLinks}
           >
             <FaBars />
@@ -31,12 +31,12 @@ function Navbar() {
             showLinks ? 'h-auto' : 'h-0'
           } md:max-h-full md:flex`}
         >
-          <ul className="flex flex-col md:flex-row md:gap-6">
+          <ul className="flex flex-col md:flex-row justify-self-auto md:gap-6">
             {links.map(({ id, url, text }) => (
               <li key={id}>
                 <Link
                   to={url}
-                  className="px-4 py-2 text-white capitalize font-bold transition-colors hover:text-blue-300"
+                  className="px-4 py-2 text-gray-800 capitalize justify-center font-bold transition-colors hover:text-gray-600"
                 >
                   {text}
                 </Link>
@@ -45,16 +45,15 @@ function Navbar() {
           </ul>
         </div>
 
-        {/* Social Icons */}
-        <ul className="hidden md:flex gap-4">
-          {social.map(({ id, url, icon }) => (
-            <li key={id}>
-              <a href={url} className="text-white transition-colors hover:text-blue-300">
-                {icon}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* login button */}
+        <div className="flex items-center">
+          <Link
+            to="/Login"
+            className="px-4 py-2 bg-gray-300 text-gray-800 rounded-md transition-colors hover:bg-gray-400"
+          >
+            Login
+          </Link>
+        </div>
       </div>
     </nav>
   );

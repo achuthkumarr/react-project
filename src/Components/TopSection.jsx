@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { social } from './data';
 
 const TopSection = () => {
   return (
@@ -21,48 +22,15 @@ const TopSection = () => {
             </span>
           </div>
         </Link>
-        <div className="flex gap-4 p-2  before:m-0 rounded-tl-md rounded-bl-3xl" style={{ backgroundColor: "#654" }}>
-        <Link
-            to="https://in.linkedin.com/in/achuth-kumar-r-716992181"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-lg"
-          >
-            <FaLinkedinIn />
-          </Link>
-          <Link
-            to="https://www.instagram.com/achuthkr/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-lg"
-          >
-            <FaInstagram />
-          </Link>
-          <Link
-            to="https://x.com/AchuthKumar11"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-lg"
-          >
-            <FaXTwitter />
-          </Link>
-          {/* <Link
-            to="https://wa.me/message/LBL4KXWKVTZBI1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-lg"
-          >
-            <FaWhatsapp />
-          </Link> */}
-          <Link
-            to="https://www.youtube.com/@achuthkumar9959"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white text-lg"
-          >
-            <FaYoutube />
-          </Link>
-        </div>
+        <ul className="flex gap-4 p-2  before:m-0 rounded-tl-md rounded-bl-3xl" style={{ backgroundColor: "#654" }}>
+          {social.map(({ id, url, icon }) => (
+            <li key={id}>
+              <a href={url} className="text-white transition-colors text-lg hover:text-blue-300">
+                {icon}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
