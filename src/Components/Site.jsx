@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 function Site() {
 return (
 <div className="mx-auto">
@@ -22,9 +23,11 @@ return (
           Innovative ideas. Robust implementation. Exceptional results. Partner with us and experience the difference!
         </p>
         <div className="mt-6">
+        <Link to="/Contact">
           <button className="px-6 py-3 text-lg font-semibold bg-blue-500 text-white rounded-lg flex items-center gap-2 hover:bg-blue-600">
             <span>📞</span> Contact Us
           </button>
+        </Link>
         </div>
       </div>
     </div>
