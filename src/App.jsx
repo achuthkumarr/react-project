@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
 import TopSection from "./Components/TopSection";
 import Login from "./Components/Login";
+import Logout from "./Components/Logout";
 
 
 function Layout() {
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
       { path: "About", element: <About /> },
       { path: "Contact", element: <Contact /> },
       { path: "Login", element: <Login /> },
+      { path: "Logout", element:<Logout /> },
     ],
   },
 ]);
