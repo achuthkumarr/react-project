@@ -7,6 +7,7 @@ import Contact from "./Components/Contact";
 import TopSection from "./Components/TopSection";
 import Login from "./Components/Login";
 import Logout from "./Components/Logout";
+import Profile from "./Components/Profile";
 
 
 function Layout() {
@@ -28,10 +29,11 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Site /> },
-      { path: "About", element: <About /> },
-      { path: "Contact", element: <Contact /> },
-      { path: "Login", element: <Login /> },
-      { path: "Logout", element:<Logout /> },
+      { path: "about", element: <About /> },
+      { path: "lontact", element: <Contact /> },
+      { path: "profile", element: <Profile /> },
+      { path: "login", element: <Login /> },
+      { path: "logout", element:<Logout /> },
     ],
   },
 ]);
