@@ -1,24 +1,43 @@
 import { useState, useRef, useEffect } from 'react';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaCaretDown } from 'react-icons/fa';
 import { links } from './data';
 import { Link } from 'react-router-dom';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
   const [showLinks, setShowLinks] = useState(false);
-  const linksContainerRef = useRef(null);
+  const [showUserDropdown, setShowUserDropdown] = useState(false);
+  const userDropdownRef = useRef(null);
   const { isAuthenticated, user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     if (!isAuthenticated) {
       setShowLinks(false);
+      setShowUserDropdown(false);
     }
   }, [isAuthenticated]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (userDropdownRef.current && !userDropdownRef.current.contains(event.target)) {
+        setShowUserDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const toggleLinks = () => {
     if (isAuthenticated) {
       setShowLinks(prev => !prev);
     }
+  };
+
+  const toggleUserDropdown = () => {
+    setShowUserDropdown(prev => !prev);
   };
 
   return (
@@ -39,7 +58,6 @@ function Navbar() {
         
         {/* Navigation Links */}
         <div
-          ref={linksContainerRef}
           className={`overflow-hidden transition-all duration-300 ${
             isAuthenticated && showLinks ? 'h-auto' : 'h-0'
           } md:max-h-full md:flex`}
@@ -60,21 +78,38 @@ function Navbar() {
           </ul>
         </div>
         
-        {/* Login/Logout Button */}
+        {/* User Account with Dropdown */}
         <div className="flex items-center">
           {isAuthenticated ? (
-            <div className="flex items-center space-x-4">
-              <span className="text-white md:mr-2">
-              {user?.email || 'User'}
-              </span>
-              <Link
-                to="/Logout"
-                className="px-4 py-2 bg-red-500 text-white rounded-md transition-colors hover:bg-red-600"
+            <div className="relative" ref={userDropdownRef}>
+              <button 
+                onClick={toggleUserDropdown}
+                className="flex items-center space-x-1 text-white px-4 py-2 rounded-md hover:bg-orange-800 transition-colors"
               >
-                Logout
-              </Link>
+                <span>{user?.email || 'User'}</span>
+                <FaCaretDown className={`ml-1 transition-transform ${showUserDropdown ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {/* Dropdown menu */}
+              {showUserDropdown && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >
+                    Profile
+                  </Link>
+                  <div className="border-t border-gray-200 my-1"></div>
+                  <Link
+                    to="/Logout"
+                    className="block px-4 py-2 text-red-600 hover:bg-gray-100"
+                  >
+                    Logout
+                  </Link>
+                </div>
+              )}
             </div>
-            ) : (
+          ) : (
             <Link
               to="/Login"
               className="px-4 py-2 bg-red-500 text-white rounded-md transition-colors hover:bg-red-600"
