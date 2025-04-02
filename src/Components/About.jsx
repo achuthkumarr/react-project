@@ -1,6 +1,25 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const About = () => {
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
+  if (!isAuthenticated) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+        <div className="bg-white p-8 rounded-lg shadow-md max-w-md w-full text-center">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">Access Denied</h2>
+          <p className="text-gray-600 mb-6">Please log in to view your Contact.</p>
+          <Link
+            to="/Login"
+            className="px-4 py-2 bg-orange-800 text-white rounded-md transition-colors hover:bg-orange-900"
+          >
+            Go to Login
+          </Link>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="relative w-full h-screen flex items-center justify-center">
   {/* Background Image */}
