@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { loginSuccess } from '../actions/authSlice'
+import { loginSuccess} from '../actions/authSlice';
+import {authService} from '../services/authService'
 import logo from '/logo.png'
 import { FaTimes } from 'react-icons/fa'
+import axios from 'axios'
 
 function Login() {
     // Navigation and Redux dispatch hooks
@@ -44,20 +46,19 @@ function Login() {
     };
 
     // Handle form submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
         if (validateForm()) {
-            try {
-                dispatch(loginSuccess({
-                    email: email,
-                }));
-                navigate('/');
-            } catch (error) {
-                console.error('Login failed', error);
-            }
+          try {
+            await dispatch(loginSuccess(email, password));
+            navigate('/');
+          } catch (error) {
+            console.error('Login failed', error);
+            setErrors(prev => ({ ...prev, auth: error.message || 'Authentication failed' }));
+          }
         }
-    };
+      };
 
     // Handle forgot password dialog open
     const handleForgotPasswordClick = () => {
@@ -86,19 +87,30 @@ function Login() {
     };
 
     // Handle password reset submit
-    const handleResetSubmit = (e) => {
+    const handleResetSubmit = async (e) => {
         e.preventDefault();
         
         if (validateResetEmail()) {
-            // In a real app, you would call an API to send a reset email
-            console.log('Password reset requested for:', resetEmail);
-            
-            // Simulate API call delay
-            setTimeout(() => {
-                setResetSent(true);
-            }, 1000);
+          try {
+            await authService.forgotPassword(resetEmail);
+            setResetSent(true);
+          } catch (error) {
+            setResetEmailError(error.message || 'Failed to send reset email');
+          }
         }
-    };
+      };
+    const fetchapi = async () => {
+        try {
+            const response = await axios.get("http://localhost:4000");
+            console.log(response.data);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
+    useEffect(() => {
+        fetchapi();
+    }
+    , []);
 
     return (
         <div className="w-full md:w-full flex flex-col justify-center items-center bg-white bg-opacity-80 p-10">
