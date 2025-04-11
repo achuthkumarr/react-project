@@ -9,6 +9,7 @@ function Navbar() {
   const [showUserDropdown, setShowUserDropdown] = useState(false);
   const userDropdownRef = useRef(null);
   const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const isActiveLink = (path) => location.pathname === path;
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -41,12 +42,12 @@ function Navbar() {
   };
 
   return (
-    <nav className="w-full z-50 bg-orange-900 shadow-lg sticky top-0">
+    <nav className="w-full z-50 bg-[#473c44] shadow-lg sticky top-0">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
         {/* Logo and Toggle Button */}
         <div className="flex items-center">
           <button
-            className={`text-2xl text-black transition-transform transform hover:rotate-90 hover:text-gray-800 ${
+            className={`text-2xl text-[#f7f7f7] transition-transform transform hover:rotate-90 hover:text-[#f5f5f5] ${
               !isAuthenticated ? 'cursor-not-allowed opacity-50' : ''
             }`}
             onClick={toggleLinks}
@@ -110,12 +111,20 @@ function Navbar() {
               )}
             </div>
           ) : (
-            <Link
-              to="/Login"
-              className="px-4 py-2 bg-red-500 text-white rounded-md transition-colors hover:bg-red-600"
-            >
-              Login
-            </Link>
+            <div className="hidden md:flex justify-center rounded-full  items-center ">
+              <Link
+                to="/Register"
+                className="bg-[#473c44] text-white px-4 py-2 font-medium rounded-full hover:bg-[#302c2f] transition-colors mr-2"
+              >
+                Sign Up
+              </Link>
+              <Link
+                to="/Login"
+                className="bg-[#473c44] text-white px-4 py-2 font-medium rounded-full hover:bg-[#302c2f] transition-colors"
+              >
+                Login
+              </Link>
+            </div>
           )}
         </div>
       </div>

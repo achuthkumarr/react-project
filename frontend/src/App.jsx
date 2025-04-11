@@ -8,6 +8,7 @@ import TopSection from "./Components/TopSection";
 import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Profile from "./Components/Profile";
+import Register from "./Components/Register";
 
 
 function Layout() {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
       { path: "profile", element: <Profile /> },
+      { path: "register", element: <Register /> },
       { path: "login", element: <Login /> },
       { path: "logout", element:<Logout /> },
     ],

@@ -5,7 +5,8 @@ const initialState = {
   user: null,
   isAuthenticated: false,
   loading: false,
-  error: null
+  error: null,
+  token: null,
 };
 
 const authSlice = createSlice({
@@ -19,6 +20,7 @@ const authSlice = createSlice({
     loginSuccess: (state, action) => {
       state.user = action.payload;
       state.isAuthenticated = true;
+      state.token = action.payload.token;
       state.loading = false;
       state.error = null;
     },
@@ -30,11 +32,17 @@ const authSlice = createSlice({
       state.user = null;
       state.isAuthenticated = false;
       authService.logout();
+    },
+    updateUserProfile: (state, action) => {
+      state.user = {
+        ...state.user,
+        ...action.payload
+      };
     }
   }
 });
 
-export const { authStart, loginSuccess, authFailure, logout } = authSlice.actions;
+export const { authStart, loginSuccess, authFailure, logout, updateUserProfile } = authSlice.actions;
 
 // Thunk action creators
 export const loginUser = (email, password) => async (dispatch) => {
@@ -54,6 +62,28 @@ export const registerUser = (userData) => async (dispatch) => {
     dispatch(authStart());
     const data = await authService.register(userData);
     dispatch(loginSuccess(data.user));
+    return data;
+  } catch (error) {
+    dispatch(authFailure(error.message));
+    throw error;
+  }
+};
+
+export const googleAuthUser = (googleData) => async (dispatch) => {
+  try {
+    dispatch(authStart());
+    const data = await authService.googleAuth(googleData);
+    dispatch(loginSuccess(data.user));
+    return data;
+  } catch (error) {
+    dispatch(authFailure(error.message));
+    throw error;
+  }
+};
+export const updateProfile = (userData) => async (dispatch) => {
+  try {
+    const data = await authService.updateProfile(userData);
+    dispatch(updateUserProfile(data.user));
     return data;
   } catch (error) {
     dispatch(authFailure(error.message));
