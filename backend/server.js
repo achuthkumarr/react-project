@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 // database connection
-const connectDatabase = require("./db");
+const connectDatabase = require("./Models/db");
 connectDatabase();
 
 

@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+  fullName: {
+    type: String,
+    default: 'User'
+  },
   email: {
     type: String,
     required: true,
@@ -15,9 +19,13 @@ const userSchema = new Schema({
     required: true,
     minlength: 6
   },
-  profilePicture: {
+  bio: {
     type: String,
-    default: ''
+    default: 'Developer'
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   },
   resetPasswordToken: {
     type: String,

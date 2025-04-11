@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../actions/authSlice';
+import {authService} from '../services/authService';
 
 function Logout() {
   const dispatch = useDispatch();
@@ -10,6 +11,9 @@ function Logout() {
   useEffect(() => {
     // Dispatch logout action
     dispatch(logout());
+
+    // Call the authService logout method
+    authService.logout();
 
     // Redirect to login page after a short delay
     const redirectTimer = setTimeout(() => {
