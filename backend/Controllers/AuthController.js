@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 
-// User Registration Controller
+// User Registration Controller 
 exports.register = async (req, res) => {
   try {
     const { email, password, fullName ,bio} = req.body;
@@ -53,7 +53,7 @@ exports.register = async (req, res) => {
   }
 };
 
-// User Login Controller
+// User Login Controller 
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -99,7 +99,7 @@ exports.login = async (req, res) => {
   }
 };
 
-// Forgot Password Controller
+// Forgot Password Controller 
 exports.forgotPassword = async (req, res) => {
   try {
     const { email } = req.body;
@@ -142,7 +142,7 @@ exports.resetPassword = async (req, res) => {
       return res.status(400).json({ message: 'Password is required' });
     }
     
-    // Verify reset token
+    // Verify reset token 
     let decoded;
     try {
       decoded = jwt.verify(token, process.env.JWT_RESET_SECRET);
@@ -164,7 +164,7 @@ exports.resetPassword = async (req, res) => {
     user.resetPasswordToken = undefined;
     user.resetPasswordExpires = undefined;
     
-    // Save user
+    // Save user as token is valid
     await user.save();
     
     res.json({
