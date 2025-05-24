@@ -20,6 +20,7 @@
     "express": "^5.1.0",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.511.0",
     "mongoose": "^8.13.2"
   },
   "devDependencies": {

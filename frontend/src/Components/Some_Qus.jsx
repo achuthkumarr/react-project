@@ -1,52 +1,7 @@
-import React, { useState  } from 'react';
-// Replace lucide-react icons with SVG components
+import React, { useState } from 'react';
+import { ChevronDown, ChevronRight, Search, CheckCircle, Circle, RotateCcw, BookOpen } from 'lucide-react';
 
-const ChevronDown = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" width={20} height={20} {...props}>
-        <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-);
-
-const ChevronRight = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" width={20} height={20} {...props}>
-        <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-);
-
-const Search = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" width={16} height={16} {...props}>
-        <circle cx={11} cy={11} r={8} stroke="currentColor" strokeWidth={2}/>
-        <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth={2} strokeLinecap="round"/>
-    </svg>
-);
-
-const CheckCircle = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" width={20} height={20} {...props}>
-        <circle cx={12} cy={12} r={10} stroke="currentColor" strokeWidth={2}/>
-        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-);
-
-const Circle = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" width={20} height={20} {...props}>
-        <circle cx={12} cy={12} r={10} stroke="currentColor" strokeWidth={2}/>
-    </svg>
-);
-
-const RotateCcw = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" width={16} height={16} {...props}>
-        <path d="M21 2v6h-6" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M3 13a9 9 0 1 0 3-7.7l-3 3.7" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-);
-
-const BookOpen = (props) => (
-    <svg viewBox="0 0 24 24" fill="none" width={32} height={32} {...props}>
-        <path d="M2 7a2 2 0 0 1 2-2h7v14H4a2 2 0 0 1-2-2V7zm18-2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7V5h7z" stroke="currentColor" strokeWidth={2} strokeLinejoin="round"/>
-    </svg>
-);
-
-const Some_Qus = () => {
+const InterviewStudyGuide = () => {
   const [expandedSections, setExpandedSections] = useState({});
   const [completedQuestions, setCompletedQuestions] = useState(new Set());
   const [searchTerm, setSearchTerm] = useState('');
@@ -436,4 +391,4 @@ const Some_Qus = () => {
   );
 };
 
-export default Some_Qus;
+export default InterviewStudyGuide;
