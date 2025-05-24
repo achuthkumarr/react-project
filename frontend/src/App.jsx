@@ -9,6 +9,7 @@ import Login from "./Components/Login";
 import Logout from "./Components/Logout";
 import Profile from "./Components/Profile";
 import Register from "./Components/Register";
+import Some_Qus from "./Components/Some_Qus";
 
 
 function Layout() {
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
       { path: "register", element: <Register /> },
       { path: "login", element: <Login /> },
       { path: "logout", element:<Logout /> },
+      { path: "qus", element: <Some_Qus /> },
     ],
   },
 ]);

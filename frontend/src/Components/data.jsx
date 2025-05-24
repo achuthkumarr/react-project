@@ -16,6 +16,11 @@ export const links = [
     url: '/contact',
     text: 'contact',
   },
+  {
+    id: 4,
+    url: '/qus',
+    text: 'quick content',
+  },
 ];
 export const social = [
   {
